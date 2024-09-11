@@ -4,10 +4,31 @@
  */
 package edu.ijse.model;
 
+import edu.ijse.db.DBConnection;
+import edu.ijse.dto.CustomerDto;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author thenuri
  */
 public class CustomerModel {
-    
+    public String saveCustomer(CustomerDto customerDto)throws Exception {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String sql = "INSERT INTO CUSTOMER VALUES (?,?,?,?,?,?,?,?,?)";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1,customerDto.getCustId());
+        statement.setString(2,customerDto.getCustTitle());
+         statement.setString(3,customerDto.getCustName());
+         statement.setString(4,customerDto.getDob());
+         statement.setDouble(5,customerDto.getSalary());
+         statement.setString(6,customerDto.getCustAddress());
+         statement.setString(7,customerDto.getCity());
+         statement.setString(8,customerDto.getProvince());
+         statement.setString(9,customerDto.getPostalCode());
+       
+        int result = statement.executeUpdate();
+        return result > 0 ? "Successfully Saved" : "Fail";
+    }
 }

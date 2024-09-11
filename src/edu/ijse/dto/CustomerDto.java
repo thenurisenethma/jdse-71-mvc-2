@@ -18,9 +18,9 @@ public class CustomerDto {
     private String custAddress;
     private String city;
     private String province;
-    private int postalCode;
+    private String postalCode;
 
-    public CustomerDto(String custId, String custTitle, String custName, String dob, Double salary, String custAddress, String city, String province, int postalCode) {
+    public CustomerDto(String custId, String custTitle, String custName, String dob, Double salary, String custAddress, String city, String province, String postalCode) {
         this.custId = custId;
         this.custTitle = custTitle;
         this.custName = custName;
@@ -147,14 +147,14 @@ public class CustomerDto {
     /**
      * @return the postalCode
      */
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
     /**
      * @param postalCode the postalCode to set
      */
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
     
