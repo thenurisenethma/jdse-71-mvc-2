@@ -4,13 +4,13 @@
  */
 package edu.ijse.mvc;
 
-import edu.ijse.mvc.db.DBConnection;
-import java.sql.SQLException;
-
 /**
  *
  * @author thenuri
  */
+import edu.ijse.db.DBConnection;
+import java.sql.SQLException;
+
 public class Main {
 
     /**
